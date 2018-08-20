@@ -9,8 +9,10 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 <title>Kerala Flood collection center near me</title>
-<meta name="description" content="Grouping Collection centers and contributors in one place.">
-<meta name="keywords" content="Kerala Flood, collection center near me, Contributor near me">
+<meta name="description" content="Grouping the collection centers and contributors in one place.">
+<meta name="keywords" content="Kerala Flood, collection center near me, contributor near me">
+<meta property="og:title" content="Kerala Flood collection center near me" />
+<meta property="og:description" content="Grouping the collection centers and contributors in one place." />
 </head>
 
 <body class="bg-light" data-gr-c-s-loaded="true"
@@ -29,7 +31,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
-				<h2 class="display-5">Help for "KERALA FLOOD"</h2>
+				<h2 class="display-5">Help for "KERALA FLOOD RELIEF"</h2>
 				</div>
 				<div class="col-md-4">
 				<a
@@ -51,9 +53,11 @@
 			</div>
 				<div class="col-md-12">
 					<p>
-						This site allows volunteers to post their collecting locations for kerala flood releif materials, which allows the contributors to effectively contact the volunteers. 
+						Find here a collection center or contributors near you.
 						<br/>
-Also, allows the people to contribute the relief materials. The people can provide the relief materials directly in the collection center, or post their location in this site, which helps volunteers to directly contact and collect the relief materials.
+						This site allows volunteers to post information of their collection center and location for kerala flood releif materials, which allows the contributors to effectively contact the volunteers. 
+						<br/>
+Also, The contributors can provide the relief materials directly in the collection center, or post their details in this site, which helps volunteers to contact and collect the relief materials.
 <br/><br/>
 To post collection center, click "Post Collection Center". To contribute, click "Contribute".
 					</p>
@@ -98,7 +102,7 @@ To post collection center, click "Post Collection Center". To contribute, click 
 				<div class="row">
 					<div class="col-md-4">
 						<form:label path="mobileNo">Mobile No:</form:label>
-						<form:input class="form-control" path="mobileNo" placeholder="mobile no to update post" required="required"></form:input>
+						<form:input class="form-control" path="mobileNo" placeholder="mobile no to update post status" required="required"></form:input>
 					</div>
 					<div class="col-md-4">
 						<form:label path="contactNo">Contact No:</form:label>
@@ -148,7 +152,7 @@ To post collection center, click "Post Collection Center". To contribute, click 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12" id="grid_heading">
-				<h2>Collectors List</h2>
+				<h2>Near Collection Center List</h2>
 			</div>
 		</div>
 		<div class="row">
@@ -160,7 +164,8 @@ To post collection center, click "Post Collection Center". To contribute, click 
 				<select type="text" id="helper_type_filter" name="helperType"
 					class="form-control" placeholder="Helper Type" Value="Kerala Flood">
 					<options>
-					<option value="collector" selected="selected">Collector</option>
+					<option value=""></option>
+					<option value="collector">Collector</option>
 					<option value="contributor">Contributor</option>
 					</options>
 				</select>
@@ -204,8 +209,10 @@ To post collection center, click "Post Collection Center". To contribute, click 
 						<c:forEach items="${listOfHelpers}" var="helper">
 							<tr>
 								<td>${helper.id}</td>
-								<td>Name : ${helper.helperName} <br /> Contact No :
-									${helper.contactNo}
+								<td>Name : ${helper.helperName} 
+								<br /> Contact No : ${helper.contactNo}
+								<br /> City : ${helper.cityName}
+								<br /> Area : ${helper.areaName}
 								</td>
 								<td style="white-space: pre-line;">${helper.description}</td>
 								<td><fmt:formatDate pattern="MM/dd/yyyy, hh:mm:ss a"
@@ -302,14 +309,14 @@ To post collection center, click "Post Collection Center". To contribute, click 
 		$('#to_collect').click(function() {
 			toggleHelperForm();
 			$("#helperType").val("collector");
-			$('#grid_heading').html('<h2>Collection Center List</h2>')
+			$('#grid_heading').html('<h2>Near Collection Center List</h2>')
 			$("#helper_type_filter").val("collector");
 			$('#add_detail').html("<h2>Add Collection Center</h2>");
 		});
 		$('#to_contribute').click(function() {
 			toggleHelperForm();
 			$("#helperType").val("contributor");
-			$('#grid_heading').html('<h2>Contributor List</h2>');
+			$('#grid_heading').html('<h2>Near Contributors List</h2>');
 			$("#helper_type_filter").val("contributor");
 			$('#add_detail').html("<h2>Add Contribution</h2>");
 		});
@@ -369,7 +376,10 @@ To post collection center, click "Post Collection Center". To contribute, click 
 			for (var i = 0; i < data.length; i++) {
 				str = str + "<tr>" + "<td>" + data[i].id + "</td>"
 						+ "<td> Name : " + data[i].helperName
-						+ "<br/> Contact No :" + data[i].contactNo + "</td>"
+						+ "<br/> Contact No :" + data[i].contactNo
+						+ "<br/> City :" + data[i].cityName
+						+ "<br/> Area :" + data[i].areaName
+						+ "</td>"
 						+ "<td style='white-space: pre-line;'>"
 						+ data[i].description + "</td>" + "<td>"
 						+ (new Date(data[i].createdTime)).toLocaleString()
