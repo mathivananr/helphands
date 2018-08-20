@@ -9,8 +9,8 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 <title>Kerala Flood collection center near me</title>
-<meta name="description" content="Grouping Collection centers and contributers in one place.">
-<meta name="keywords" content="Kerala Flood, collection center near me, Contributer near me">
+<meta name="description" content="Grouping Collection centers and contributors in one place.">
+<meta name="keywords" content="Kerala Flood, collection center near me, Contributor near me">
 </head>
 
 <body class="bg-light" data-gr-c-s-loaded="true"
@@ -39,7 +39,7 @@
 					alt="Facebook" />
 				</a>
 				<a
-					href="https://twitter.com/share?url=http://lping.in&amp;text=Group%20of%20Volunteers%20and%20Contributers&amp;hashtags=lping"
+					href="https://twitter.com/share?url=http://lping.in&amp;text=Group%20of%20Volunteers%20and%20Contributors&amp;hashtags=lping"
 					target="_blank"> <img
 					src="https://simplesharebuttons.com/images/somacro/twitter.png"
 					alt="Twitter" />
@@ -161,7 +161,7 @@ To post collection center, click "Post Collection Center". To contribute, click 
 					class="form-control" placeholder="Helper Type" Value="Kerala Flood">
 					<options>
 					<option value="collector" selected="selected">Collector</option>
-					<option value="contributer">Contributer</option>
+					<option value="contributor">Contributor</option>
 					</options>
 				</select>
 			</div>
@@ -308,9 +308,9 @@ To post collection center, click "Post Collection Center". To contribute, click 
 		});
 		$('#to_contribute').click(function() {
 			toggleHelperForm();
-			$("#helperType").val("contributer");
-			$('#grid_heading').html('<h2>Contributer List</h2>');
-			$("#helper_type_filter").val("contributer");
+			$("#helperType").val("contributor");
+			$('#grid_heading').html('<h2>Contributor List</h2>');
+			$("#helper_type_filter").val("contributor");
 			$('#add_detail').html("<h2>Add Contribution</h2>");
 		});
 
@@ -333,7 +333,7 @@ To post collection center, click "Post Collection Center". To contribute, click 
 				params.cityName = $('#city_filter').val();
 			}
 			if ($('#area_filter').val() != '') {
-				params.area = $('#area_filter').val();
+				params.areaName = $('#area_filter').val();
 			}
 			return params;
 		}
