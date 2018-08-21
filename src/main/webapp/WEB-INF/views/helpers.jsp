@@ -8,33 +8,45 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
-<title>Kerala Flood collection center near me</title>
+<title>Kerala Flood relief material collection center near me</title>
 <meta name="description" content="Grouping the collection centers and contributors in one place.">
 <meta name="keywords" content="Kerala Flood, collection center near me, contributor near me">
-<meta property="og:title" content="Kerala Flood collection center near me" />
+<meta property="og:url" content="http://lping.in" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Kerala Flood relief material collection center near me" />
 <meta property="og:description" content="Grouping the collection centers and contributors in one place." />
+<meta property="og:image" content="http://lping.in/resources/images/kerala-flood.jpeg" />
+
 </head>
 
 <body class="bg-light" data-gr-c-s-loaded="true"
 	cz-shortcut-listen="true">
+	<!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=489907297806676&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
 	<input type="hidden" id="start" value="10" />
 	<input type="hidden" id="reached" value="no" />
-	<main role="main"> <!-- Main jumbotron for a primary marketing message or call to action -->
+	<main role="main"> 
+	<img class="text-center" src="/resources/images/kerala-flood.jpg" alt="kerala flood volunteers and contributers" title="kerala flood volunteers and contributers" width="100%" height="160"></img>
+	<!-- Main jumbotron for a primary marketing message or call to action -->
 	<div class="jumbotron">
-		<div class="row">
-			<div class="col-md-4">
-			</div>
-			<div class="col-md-4">
-			</div>
-			
-		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
 				<h2 class="display-5">Help for "KERALA FLOOD RELIEF"</h2>
 				</div>
 				<div class="col-md-4">
-				<a
+				<!-- Your share button code -->
+					<div class="fb-share-button" data-href="http://lping.in" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flping.in%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+  
+				<!-- <a
 					href="http://www.facebook.com/sharer.php?u=https://lping.in"
 					target="_blank"> <img
 					src="https://simplesharebuttons.com/images/somacro/facebook.png"
@@ -46,32 +58,40 @@
 					src="https://simplesharebuttons.com/images/somacro/twitter.png"
 					alt="Twitter" />
 				</a>
-				 <!-- Google+ -->
+				 Google+
 			    <a href="https://plus.google.com/share?url=http://lping.in" target="_blank">
 			        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
-			    </a>
+			    </a> -->
 			</div>
 				<div class="col-md-12">
 					<p>
-						Find here a collection center or contributors near you.
+						We are trying to group volunteers and contributers.
 						<br/>
-						This site allows volunteers to post information of their collection center and location for kerala flood releif materials, which allows the contributors to effectively contact the volunteers. 
+						Find here a collection center or volunteers nearby your place.
 						<br/>
-Also, The contributors can provide the relief materials directly in the collection center, or post their details in this site, which helps volunteers to contact and collect the relief materials.
-<br/><br/>
-To post collection center, click "Post Collection Center". To contribute, click "Contribute".
+						This site allows volunteers to post information of their collection center for kerala flood relief, which allows the contributors can easily contact nearby collection centers to contribute. 
+						<br/>
+						Also, The contributors can post their details in this site, which helps volunteers to contact and collect the relief materials.
+						<br/>
+						To post collection center, click "Post Collection Center". To contribute, click "Contribute".
 					</p>
 				</div>
 			</div>
+			<br/>
 			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-4">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-3">
 					<button id="to_collect" type=button
 						class="btn btn-outline-danger btn-lg" role="button">Post Collection Center</button>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-2">
 					<button id="to_contribute" type=button
 						class="btn btn-outline-danger btn-lg" role="button">Contribute</button>
+				</div>
+				<div class="col-md-4">
+					<a id="to_donate" href="https://donation.cmdrf.kerala.gov.in/" target="_blank"
+						class="btn btn-outline-danger btn-lg" role="button">Donate to Chief Minister's Fund</a>
 				</div>
 			</div>
 		</div>
@@ -202,21 +222,19 @@ To post collection center, click "Post Collection Center". To contribute, click 
 					<table class="table" id="help_details">
 						<tr>
 							<th width="5">Id</th>
-							<th width="25">Name</th>
+							<th width="40">Name</th>
 							<th width="50">Description</th>
-							<th width="20">Posted Date</th>
 						</tr>
 						<c:forEach items="${listOfHelpers}" var="helper">
 							<tr>
 								<td>${helper.id}</td>
 								<td>Name : ${helper.helperName} 
+								<br /> Type : ${helper.helperType}
 								<br /> Contact No : ${helper.contactNo}
 								<br /> City : ${helper.cityName}
 								<br /> Area : ${helper.areaName}
 								</td>
 								<td style="white-space: pre-line;">${helper.description}</td>
-								<td><fmt:formatDate pattern="MM/dd/yyyy, hh:mm:ss a"
-										value="${helper.createdTime.time}"></fmt:formatDate></td>
 							</tr>
 						</c:forEach>
 					</table>
@@ -230,7 +248,7 @@ To post collection center, click "Post Collection Center". To contribute, click 
 	<!-- /container --> </main>
 
 	<footer class="container">
-		<p>To update the post as closed use this link <a href="http://lping.in/closePost/place-post-id-here/place-mobile-no-here">http://lping.in/closePost/place-post-id-here/place-mobile-no-here</a></p>
+		<p>To update the post as closed use this link <a href="http://lping.in/closePost/place-post-id-here/place-mobile-no-here">http://lping.in/closePost/place-post-id-here/place-mobile-no-here</a> and replace the post id and mobile no in URL</p>
 	</footer>
 
 	<!-- Bootstrap core JavaScript
@@ -348,7 +366,7 @@ To post collection center, click "Post Collection Center". To contribute, click 
 		$('#search')
 				.click(
 						function() {
-							var header = '<tr>	<th width="5">Id</th> <th width="25">Name</th> <th width="50">Description</th> <th width="20">Posted Date</th> </tr>';
+							var header = '<tr>	<th width="5">Id</th> <th width="40">Name</th> <th width="50">Description</th></tr>';
 							$
 									.ajax({
 										url : '/getHelpers/0',
@@ -376,14 +394,13 @@ To post collection center, click "Post Collection Center". To contribute, click 
 			for (var i = 0; i < data.length; i++) {
 				str = str + "<tr>" + "<td>" + data[i].id + "</td>"
 						+ "<td> Name : " + data[i].helperName
+						+ "<br/> Type :" + data[i].helperType
 						+ "<br/> Contact No :" + data[i].contactNo
 						+ "<br/> City :" + data[i].cityName
 						+ "<br/> Area :" + data[i].areaName
 						+ "</td>"
 						+ "<td style='white-space: pre-line;'>"
-						+ data[i].description + "</td>" + "<td>"
-						+ (new Date(data[i].createdTime)).toLocaleString()
-						+ "</td>" + "</tr>";
+						+ data[i].description + "</td></tr>";
 			}
 			return str;
 		}
