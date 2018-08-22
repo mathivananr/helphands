@@ -28,6 +28,7 @@
 <meta property="og:title" content="Kerala Flood relief material collection center near me" />
 <meta property="og:description" content="Grouping the collection centers and contributors in one place." />
 <meta property="og:image" content="http://lping.in/resources/images/kerala-flood.jpeg" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
@@ -95,6 +96,8 @@
 			</div>
 			<br/>
 			<div class="row">
+				<div class="col-md-2">
+				</div>
 				<div class="col-md-3">
 					<button id="to_collect" type=button
 						class="btn btn-outline-danger btn-lg" role="button">Post Collection Center</button>
