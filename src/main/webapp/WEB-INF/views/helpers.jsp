@@ -4,6 +4,18 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124226623-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124226623-1');
+</script>
+ -->
+
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -23,6 +35,8 @@
 	cz-shortcut-listen="true">
 	<!-- Load Facebook SDK for JavaScript -->
   <div id="fb-root"></div>
+  <!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -45,8 +59,10 @@
 				<div class="col-md-4">
 				<!-- Your share button code -->
 					<div class="fb-share-button" data-href="http://lping.in" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flping.in%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-  
-				<!-- <a
+					<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Grouping kerala flood relief volunteers here" data-url="http://lping.in" data-hashtags="lping" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>				
+					<!-- Place this tag where you want the share button to render. -->
+					<div class="g-plus" data-action="share" data-height="30" data-href="http://lping.in">Share</div>
+					<!-- <a
 					href="http://www.facebook.com/sharer.php?u=https://lping.in"
 					target="_blank"> <img
 					src="https://simplesharebuttons.com/images/somacro/facebook.png"
@@ -79,8 +95,6 @@
 			</div>
 			<br/>
 			<div class="row">
-				<div class="col-md-2">
-				</div>
 				<div class="col-md-3">
 					<button id="to_collect" type=button
 						class="btn btn-outline-danger btn-lg" role="button">Post Collection Center</button>
